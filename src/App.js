@@ -4,14 +4,15 @@ import { generatePalette } from './colorHelpers'
 import seedColors from './seedColors'
 import './App.css';
 
-function App() {
-  console.log(generatePalette(seedColors[4]))
-  return (
-    < div className="App" >
-
-      <Palette {...seedColors[4]} />
-    </div >
-  );
+class App extends Component {
+  render() {
+    return (
+      < div className="App" >
+        <Palette palette={generatePalette(seedColors[4])} />
+      </div >
+    );
+  }
 }
+
 
 export default App;
