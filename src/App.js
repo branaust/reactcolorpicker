@@ -4,6 +4,7 @@ import Palette from './Palette'
 import { generatePalette } from './colorHelpers'
 import seedColors from './seedColors'
 import PaletteList from './PaletteList'
+
 import './App.css';
 
 class App extends Component {
