@@ -61,6 +61,10 @@
     font-size: 12px;
 }
 
+.light-text{
+    color: white
+}
+
 .see-more{
     background: rgba(255,255,255, 0.3);
     position: absolute;
@@ -105,6 +109,10 @@
     transform: scale(0.1);
     opacity: 0;
     color:white;
+}
+
+.dark-msg{
+    color:rgba(0, 0, 0, 0.479);
 }
 
 .copy-msg.show{
