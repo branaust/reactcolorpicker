@@ -6,9 +6,9 @@ import Snackbar from "@material-ui/core/SnackBar"
 import CloseIcon from "@material-ui/icons/Close"
 import IconButton from "@material-ui/core/IconButton"
 import 'rc-slider/assets/index.css';
-import './Navbar.css'
 import { NavLink } from 'react-router-dom'
-
+import { withStyles } from '@material-ui/styles'
+import styles from './styles/NavBarStyles'
 
 class Navbar extends Component {
 
@@ -34,18 +34,18 @@ class Navbar extends Component {
         this.setState({ open: false })
     }
     render() {
-        const { level, changeLevel } = this.props
+        const { level, changeLevel, classes } = this.props
         const { format } = this.state
         return (
-            <header className="Navbar">
-                <div className="logo">
+            <header className={classes.Navbar}>
+                <div className={classes.logo}>
                     <NavLink exact to="/">reactcolorpicker</NavLink>
                 </div>
-                    {/*If Palette, show Slider, else - hide*/}   
+                {/*If Palette, show Slider, else - hide*/}
                 {this.props.showingAllColors &&
                     <div className="slider-container">
                         <span>Level: {level}</span>
-                        <div className="slider">
+                        <div className={classes.slider}>
                             <Slider
                                 defaultValue={level}
                                 min={100}
@@ -72,7 +72,7 @@ class Navbar extends Component {
                     </div>
                 }
 
-                <div className="select-container">
+                <div className={classes.selectContainer}>
                     <Select value={format} onChange={this.handleFormatChange}>
                         <MenuItem value="hex">HEX - #ffffff</MenuItem>
                         <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -101,4 +101,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default withStyles(styles)(Navbar)
