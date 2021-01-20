@@ -76,8 +76,9 @@ class NewPaletteForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            open: false,
-            color: "white"
+            open: true,
+            currentColor: "sky blue",
+            colors: ["green", "#b39937"]
         }
     }
 
@@ -88,6 +89,16 @@ class NewPaletteForm extends Component {
     handleDrawerClose = () => {
         this.setState({ open: false });
     };
+
+    updateCurrentColor = (newColor) => {
+        this.setState({ currentColor: newColor.hex })
+    }
+
+    addNewColor = () => {
+        this.setState({
+            colors: [...this.state.colors, this.state.currentColor]
+        });
+    }
 
     render() {
         const { classes } = this.props;
@@ -137,10 +148,16 @@ class NewPaletteForm extends Component {
                         <Button variant="contained" color="primary">Random Color</Button>
                     </div>
 
-                    <ChromePicker color={this.state.color}
-                        onChangeComplete={newColor => console.log(newColor)}
+                    <ChromePicker color={this.state.currentColor}
+                        onChangeComplete={this.updateCurrentColor}
                     />
-                    <Button variant="contained" color='primary'>Add Color</Button>
+                    <Button
+                        variant="contained"
+                        onClick={this.addNewColor}
+                        color='primary'
+                        style={{ backgroundColor: this.state.currentColor }}>
+                        Add Color
+                    </Button>
 
                 </Drawer>
                 <main
@@ -149,7 +166,11 @@ class NewPaletteForm extends Component {
                     })}
                 >
                     <div className={classes.drawerHeader} />
-
+                    <ul>
+                        {this.state.colors.map(color => (
+                            <li style={{ backgroundColor: color }}>{color}</li>
+                        ))}
+                    </ul>
                 </main>
             </div>
         );
