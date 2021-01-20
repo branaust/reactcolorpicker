@@ -10,6 +10,7 @@ const styles = {
         position: "relative",
         marginBottom: "-3.5px",
         textTransform: "uppercase",
+        cursor: "pointer"
     }
 }
 
@@ -18,7 +19,7 @@ function DraggableColorBox(props) {
         <div
             className={props.classes.root}
             style={{ backgroundColor: props.color }}>
-            {props.color}
+            {props.name}
         </div>
     )
 }
