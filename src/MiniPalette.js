@@ -1,6 +1,5 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
-import { Link } from 'react-router-dom'
 import styles from './styles/MiniPaletteStyles'
 
 
