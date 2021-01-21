@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/styles'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 const styles = {
     root: {
@@ -10,16 +11,47 @@ const styles = {
         position: "relative",
         marginBottom: "-3.5px",
         textTransform: "uppercase",
-        cursor: "pointer"
+        cursor: "pointer",
+
+        "&:hover svg": {
+            color: "#fff",
+            transform: "scale(1.5)"
+        }
+    },
+    boxContent: {
+        position: "absolute",
+        padding: "10px",
+        width: "100%",
+        left: "0px",
+        bottom: "0px",
+        color: "rgba(0,0,0,0.5)",
+        textAlign: "left",
+        letterSpacing: "1px",
+        fontSize: "12px",
+        display: "flex",
+        justifyContent: "space-between"
+    },
+    deleteIcon: {
+        transition: "all 0.2s ease-in-out"
+
+
     }
 }
 
 function DraggableColorBox(props) {
+
+    const { classes } = props
+
     return (
         <div
-            className={props.classes.root}
+            className={classes.root}
             style={{ backgroundColor: props.color }}>
-            {props.name}
+            <div className={classes.boxContent}>
+                <span>{props.name}</span>
+                <HighlightOffIcon className={classes.deleteIcon} />
+            </div>
+
+
         </div>
     )
 }
