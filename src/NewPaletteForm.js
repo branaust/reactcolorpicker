@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import PaletteFormNav from './PaletteFormNav'
-import { Link } from 'react-router-dom'
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Button from "@material-ui/core/Button";
 import DraggableColorList from './DraggableColorList'
@@ -83,8 +78,6 @@ class NewPaletteForm extends Component {
     static defaultProps = {
         maxColors: 20
     }
-
-
     constructor(props) {
         super(props)
         this.state = {
@@ -92,7 +85,6 @@ class NewPaletteForm extends Component {
             currentColor: "sky blue",
             newColorName: "",
             colors: this.props.palettes[0].colors,
-
         }
     }
     componentDidMount() {
@@ -106,7 +98,6 @@ class NewPaletteForm extends Component {
                 ({ color }) => color !== this.state.currentColor
             )
         )
-
     }
 
     handleDrawerOpen = () => {
@@ -162,7 +153,6 @@ class NewPaletteForm extends Component {
             colors: []
         })
     }
-
     randomColor = () => {
         const randColor = randomColor()
         const newColor = { color: randColor, name: randomColor }
@@ -176,6 +166,7 @@ class NewPaletteForm extends Component {
         const { classes, maxColors, palettes } = this.props;
         const { open, colors } = this.state;
         const paletteIsFull = colors.length >= maxColors
+
         return (
             <div className={classes.root}>
                 <PaletteFormNav
