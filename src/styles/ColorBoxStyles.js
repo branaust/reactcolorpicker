@@ -1,3 +1,5 @@
+
+
 import chroma from 'chroma-js'
 
 export default {
@@ -8,7 +10,7 @@ export default {
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
-        marginBottom: "-3.5px",
+        marginBottom: "-6.2px",
         textTransform: "uppercase",
         "&:hover button": {
             opacity: "1",

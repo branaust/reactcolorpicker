@@ -5,7 +5,7 @@ const styles = {
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
-        marginBottom: "-3.5px",
+        marginBottom: "-6.2px",
         textTransform: "uppercase",
         cursor: "pointer",
 
