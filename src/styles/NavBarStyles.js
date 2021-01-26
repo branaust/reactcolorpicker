@@ -1,9 +1,17 @@
+/* eslint-disable */
+
+import sizes from './sizes'
+
 export default {
     Navbar: {
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start",
         height: "6vh",
+        [sizes.down("xs")]: {
+            flexDirection: "column",
+            height: "10vh",
+        }
     },
 
     logo: {
@@ -19,6 +27,11 @@ export default {
         "& a": {
             textDecoration: "none",
             color: "black",
+        },
+        [sizes.down("xs")]: {
+            width: "100%",
+            marginRight: "0",
+            padding: "8px 13px",
         }
     },
 
@@ -26,6 +39,9 @@ export default {
         width: "350px",
         margin: "0 10px",
         display: "inline-block",
+        [sizes.down("xs")]: {
+            width: "150px"
+        }
     },
 
     selectContainer: {
