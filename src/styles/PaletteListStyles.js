@@ -8,8 +8,8 @@ export default {
         backgroundImage: `url(${bg})`,
         /* background by SVGBackgrounds.com */
         backgroundAttachment: "fixed",
-        height: "100%",
-        width: "100%",
+        height: "105vh",
+        width: "100vw",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
