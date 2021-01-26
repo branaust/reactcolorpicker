@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
     root: {
         backgroundColor: "white",

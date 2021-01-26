@@ -1,13 +1,19 @@
 /* eslint-disable */
 import sizes from './sizes'
+import bg from './bg.svg'
 
 export default {
     root: {
-        backgroundColor: "blue",
-        height: "100vh",
+        backgroundColor: "#425ac7",
+        backgroundImage: `url(${bg})`,
+        /* background by SVGBackgrounds.com */
+        backgroundAttachment: "fixed",
+        height: "100%",
+        width: "100%",
         display: "flex",
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        overflow: "scroll"
     },
     container: {
         width: "50%",
