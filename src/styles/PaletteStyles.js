@@ -1,4 +1,6 @@
 /* eslint-disable */
+import sizes from './sizes'
+
 export default {
     Palette: {
         height: "100vh",
@@ -15,7 +17,7 @@ export default {
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
-        marginBottom: "-3.5px",
+        marginBottom: "-6.2px",
         textTransform: "uppercase",
         opacity: "1",
         backgroundColor: "black",
@@ -37,6 +39,19 @@ export default {
             border: "none",
             cursor: "pointer",
             textDecoration: "none",
-        }
+        },
+        [sizes.down("lg")]: {
+            width: "25%",
+            height: "33.333%"
+        },
+        [sizes.down("md")]: {
+            width: "50%",
+            height: "20%"
+        },
+        [sizes.down("xs")]: {
+            width: "100%",
+            height: "10%"
+        },
+
     }
 }
