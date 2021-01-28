@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Palette from './Palette'
 import { generatePalette } from './colorHelpers'
@@ -10,7 +10,7 @@ import Page from './Page'
 import NewPaletteForm from './NewPaletteForm'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-class App extends Component {
+class App extends PureComponent {
   constructor(props) {
     super(props);
     const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"))
